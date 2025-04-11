@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css?family=Abel");
+
+body {
+  font-family: "Segoe UI", sans-serif; /* PROMJENA */
+  background-color: #f0f2f5; /* PROMJENA */
+  padding: 20px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+a.image-popup-vertical-fit {
+  cursor: -webkit-zoom-in;
+}
+
+.img-gallery-magnific {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.magnific-img {
+  width: 30%;
+  min-width: 250px;
+}
+
+.magnific-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.magnific-img img:hover {
+  transform: scale(1.03);
+}
+
+.magnific-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.magnific-img img {
+  transition: all 0.3s ease;
+}
+
+.magnific-img:hover img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.5);
+  z-index: 10;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.galerija h1 {
+  color: darkblue;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  padding: 20px;
+}
+
+.lightbox:target {
+  display: flex;
+}
+
+/* SLIKA UNUTAR LIGHTBOXA */
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+}
+
+/* GUMB ZA ZATVARANJE */
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 28px;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-radius: 6px;
+}
+
+/* BONUS: zatvaranje hover efekt */
+.lightbox .close:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.galerija {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.content-wrapper {
+  max-width: 100%;
+  overflow-x: auto;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+.content-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px; /* ili koliko ti treba da se sadržaj ne sabije */
+}
+
+.galerija_slika {
+  border: 2px solid var(--boja-okvira);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.4s ease, border-color 0.3s ease;
+}
+
+.galerija_slika:hover {
+  transform: scale(1.05); /* PROMJENA */
+  border-color: var(--boja-hovera);
+}
+
+.galerija_slika img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+figcaption {
+  text-align: center;
+  padding: 8px;
+  font-size: 14px;
+  background-color: #fff;
+}
+
+@media (max-width: 768px) {
+  .galerija {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .galerija {
+    grid-template-columns: 1fr;
+  }
+
+  body {
+    padding: 10px;
+  }
+}

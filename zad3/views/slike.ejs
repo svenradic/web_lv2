@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Galerija</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style/style_slike.css" />
+    <link rel="stylesheet" href="/style/style_index.css" />
+  </head>
+  <body>
+    <nav class="navbar" aria-label="Primarna navigacija">
+      <button class="dropbtn">Menu</button>
+      <ul class="dropdown-content">
+        <li><a href="../index.html">Početna</a></li>
+        <li><a href="../grafikon.html">Grafikon</a></li>
+        <li><a href="#">Slike</a></li>
+      </ul>
+    </nav>
+    <h1>Galerija slika</h1>
+    <section class="galerija">
+      <% images.forEach(image => { %>
+      <figure class="galerija-slika">
+        <a href="#<%= image.id %>">
+          <img src="<%= image.url %>" alt="<%= image.title %>" loading="lazy" />
+        </a>
+        <figcaption><%= image.title %></figcaption>
+      </figure>
+
+      <aside id="<%= image.id %>" class="lightbox">
+        <a href="#" class="close">✕ Zatvori</a>
+        <img src="<%= image.url %>" alt="<%= image.title %> uvećano" />
+      </aside>
+      <% }); %>
+    </section>
+  </body>
+</html>
