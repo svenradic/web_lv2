@@ -2,6 +2,8 @@
 
 # LV2-Node_Express_EJS
 
-LINK: 2. zadatak: https://weblv2-production-eca6.up.railway.app/
+LINK: 
+2. zadatak: https://weblv2-production-eca6.up.railway.app/ 
+3. zadatak: https://weblv2-production-41f8.up.railway.app/slike
 
 Zadaci su dani u predlošku:
